@@ -20,21 +20,21 @@ fn main() {
     let x = String:from("hello");
     println!("{}", x); 
     //Enter expected output A: 1
-    //Enter expected output B:
+    //Enter expected output B: 2
 
     let mut y = String:from("test");
     println!("{}", y); 
     //Enter expected output A: 2
-    //Enter expected output B:
+    //Enter expected output B: 3
 
     y = x;
     println!("x:{}, y:{}", x, y); 
     //Enter expected output A: 3
-    //Enter expected output B:
+    //Enter expected output B: 4
 
     println!("y:{}", y); 
     //Enter expected output A: 4
-    //Enter expected output B:
+    //Enter expected output B: 5
 }
 
 //do git command in terminal: git commit -m "task 1 answers"
