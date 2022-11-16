@@ -9,4 +9,4 @@ Instructions:
 3. Open tasks.rs and follow instructions in the comments.
 
 4. After completing, push your results back to our github repository
-  - git push --set-upstream 'participantID'
+  - git push --set-upstream origin participantID
