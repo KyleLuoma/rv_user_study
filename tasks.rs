@@ -19,21 +19,21 @@ fn main() {
 fn main() {
     let x = String:from("hello");
     println!("{}", x); 
-    //Enter expected output A:
+    //Enter expected output A: 1
     //Enter expected output B:
 
     let mut y = String:from("test");
     println!("{}", y); 
-    //Enter expected output A:
+    //Enter expected output A: 2
     //Enter expected output B:
 
     y = x;
     println!("x:{}, y:{}", x, y); 
-    //Enter expected output A:
+    //Enter expected output A: 3
     //Enter expected output B:
 
     println!("y:{}", y); 
-    //Enter expected output A:
+    //Enter expected output A: 4
     //Enter expected output B:
 }
 
