@@ -138,37 +138,37 @@ fn main(){
     let mut s = String::from("hello");
     println!("{}", s);  
     //Enter expected output A: "hello"
-    //Enter expected output B:
+    //Enter expected output B: "hello"
 
     let r1 = &s;
     println!("{}", r1); 
     //Enter expected output A: "hello"
-    //Enter expected output B:
+    //Enter expected output B: "hello"
 
     let r2 = &s;
     println!("{}", r2);  
     //Enter expected output A: "hello"
-    //Enter expected output B:
+    //Enter expected output B: "hello"
 
     s = String::from("world"); 
     // Is this valid? Why/Why not? A: Yes because no one else has r1 and r2. Unsure if compiler can know this is valid.
-    // Is this valid? Why/Why not? B:
+    // Is this valid? Why/Why not? B: Not valid because r1 and r2 are still alive
 
     assert!(compare_strings(r1, r2));
 
     s = String::from("world");
     // Is this valid? Why/Why not? A: Definitely true because r1 and r2 have been used.
-    // Is this valid? Why/Why not? B:
+    // Is this valid? Why/Why not? B: Yes, see above.
 
     let r3 = &mut s;
     println!("{}", r3); 
     //Enter expected output A: "hello"
-    //Enter expected output B:
+    //Enter expected output B: "hello"
 
     clear_string(r3);
     println!("{}", r3); 
     //Enter expected output A: error - r3 used up by clear_string
-    //Enter expected output B:
+    //Enter expected output B: ditto
 }
 
 
