@@ -19,21 +19,21 @@ fn main() {
 fn main() {
     let x = String:from("hello");
     println!("{}", x); 
-    //Enter expected output A:
+    //Enter expected output A: "hello"
     //Enter expected output B:
 
     let mut y = String:from("test");
     println!("{}", y); 
-    //Enter expected output A:
+    //Enter expected output A: "test"
     //Enter expected output B:
 
     y = x;
     println!("x:{}, y:{}", x, y); 
-    //Enter expected output A:
+    //Enter expected output A: some kind of an error: x is moved into y, therefore it may not be referenced in the println!
     //Enter expected output B:
 
     println!("y:{}", y); 
-    //Enter expected output A:
+    //Enter expected output A: (unreachable because of error?)
     //Enter expected output B:
 }
 
