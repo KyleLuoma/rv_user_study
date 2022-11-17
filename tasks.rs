@@ -78,23 +78,23 @@ fn main() {
     let s = String::from("hello");
     println!("{}", s); 
     //Enter expected output A: "hello"
-    //Enter expected output B:
+    //Enter expected output B: "hello"
 
     takes_ownership(s);
     let mut x = 5; 
     println!("{}", x); 
     //Enter expected output A: 5
-    //Enter expected output B:
+    //Enter expected output B: 5
 
     let y = x;
     x = 6;
     println!("{}", s); 
     //Enter expected output A: error - x has been moved and s is unreachable
-    //Enter expected output B:
+    //Enter expected output B: error - s is unreachable
 
     println!("{}", x + y); 
     //Enter expected output A: error - x has been moved
-    //Enter expected output B:
+    //Enter expected output B: 6 + 5 = 11
 }
 
 fn takes_ownership(some_string: String) {
