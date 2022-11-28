@@ -20,21 +20,21 @@ fn main() {
     let x = String:from("hello");
     println!("{}", x);
     //Enter expected output A: hello
-    //Enter expected output B:
+    //Enter expected output B: hello
 
     let mut y = String:from("test");
     println!("{}", y); 
     //Enter expected output A: test
-    //Enter expected output B:
+    //Enter expected output B: test
 
     y = x;
     println!("x:{}, y:{}", x, y); 
     //Enter expected output A: x:hello, y:hello
-    //Enter expected output B:
+    //Enter expected output B: either print x: "panic" (x doesn't have ownership), y:hello; or error since x does not have ownership
 
     println!("y:{}", y); 
     //Enter expected output A: y:hello
-    //Enter expected output B:
+    //Enter expected output B: y:hello
 }
 
 //do git command in terminal: git commit -m "task 1 answers"
