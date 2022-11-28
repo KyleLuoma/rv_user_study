@@ -138,15 +138,17 @@ Function f();
 Function println!()
 --- END Variable Definitions --- */
 fn main() {
-    let x = String::from("hello"); // !{ REPLACE ME WITH ANNOTATION }
-    let y = &x; // !{ REPLACE ME WITH ANNOTATION }
-    let z = &x; // !{ REPLACE ME WITH ANNOTATION }
-    f(y, z); /* !{ REPLACE ME WITH ANNOTATION } */
-} // !{ REPLACE ME WITH ANNOTATION }
+    let x = String::from("hello"); // !{ Move(String::from()->x) }
+    let y = &x; // !{ StaticBorrow(x->y) }
+    let z = &x; // !{ StaticBorrow(x->z) }
+    f(y, z); /* !{ PassByStaticReference(y->f()),
+        PassByStaticReference(z->f()),
+        StaticDie(y->x), StaticDie(z->x) } */
+} // !{ GoOutOfScope(x), GoOutOfScope(y), GoOutOfScope(z) }
 
-fn f(s1 : &String, s2 : &String) { // !{ REPLACE ME WITH ANNOTATION }
-    println!("{} and {}", s1, s2); // !{ REPLACE ME WITH ANNOTATION }
-} // !{ REPLACE ME WITH ANNOTATION }
+fn f(s1 : &String, s2 : &String) { // !{ InitRefParam(s1), InitRefParam(s2) }
+    println!("{} and {}", s1, s2); // !{ PassByStaticReference(s1->println!()), PassByStaticReference(s2->println!()) }
+} // !{ GoOutOfScope(s1), GoOutOfScope(s2) }
 
 
 /* Copy the annotations from this comment block and paste them where they
@@ -154,23 +156,21 @@ belong in the code above. NOTE: They are not listed in order of appearance
 in the code.
 
 -------------------------------------------------------------------------
-StaticBorrow(x->y)
+
 -------------------------------------------------------------------------
-PassByStaticReference(s1->println!()), PassByStaticReference(s2->println!())
+
 -------------------------------------------------------------------------
-Move(String::from()->x)
+
 -------------------------------------------------------------------------
-StaticBorrow(x->z)
+
 -------------------------------------------------------------------------
-InitRefParam(s1), InitRefParam(s2)
+
 -------------------------------------------------------------------------
-GoOutOfScope(s1), GoOutOfScope(s2)
+
 -------------------------------------------------------------------------
-PassByStaticReference(y->f()),
-        PassByStaticReference(z->f()),
-        StaticDie(y->x), StaticDie(z->x)
+
 -------------------------------------------------------------------------        
-GoOutOfScope(x), GoOutOfScope(y), GoOutOfScope(z)
+
 -------------------------------------------------------------------------
 */
 
