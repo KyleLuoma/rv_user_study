@@ -115,76 +115,7 @@ fn takes_ownership(some_string: String) {
 
 
 
-
-/*TASK 3: HATRA 2*/
-
-//Review the code:
-fn main(){
-    let mut s = String::from("hello");
-
-    let r1 = &s;
-    let r2 = &s;
-    assert!(compare_strings(r1, r2));
-
-    let r3 = &mut s;
-    clear_string(r3);
-}
-
-
-//For the same code block, fill in the blanks in the expected output A comment lines. If you
-// believe the output would be a panic or error, in your own words 
-// describe what type of error you expect (doesn't have to be exact).
-fn main(){
-    let mut s = String::from("hello");
-    println!("{}", s);  
-    //Enter expected output A:
-    //Enter expected output B:
-
-    let r1 = &s;
-    println!("{}", r1); 
-    //Enter expected output A:
-    //Enter expected output B:
-
-    let r2 = &s;
-    println!("{}", r2);  
-    //Enter expected output A:
-    //Enter expected output B:
-
-    s = String::from("world"); 
-    // Is this valid? Why/Why not? A:
-    // Is this valid? Why/Why not? B:
-
-    assert!(compare_strings(r1, r2));
-
-    s = String::from("world");
-    // Is this valid? Why/Why not? A:
-    // Is this valid? Why/Why not? B:
-
-    let r3 = &mut s;
-    println!("{}", r3); 
-    //Enter expected output A:
-    //Enter expected output B:
-
-    clear_string(r3);
-    println!("{}", r3); 
-    //Enter expected output A:
-    //Enter expected output B:
-}
-
-
-//do git command in terminal: git commit -m "task 3 answers"
-
-//Now that you're done, let's take a look at the RustViz diagram.
-// http://jp8.ddns.net:8000/hatra2.html
-
-//After reviewing the diagram, make any changes to your previous 
-// answers you think are needed in the expected output B comment lines.
-
-//do git command in terminal: git commit -m "task 3 diagram answers"
-
-
-
-/*TASK 4: Aligning RustViz annotations*/
+/*TASK 3: Aligning RustViz annotations*/
 
 //This code block has placeholders // !{ REPLACE ME WITH ANNOTATION } 
 // that need to be replaced with the correct RustViz annotation.
