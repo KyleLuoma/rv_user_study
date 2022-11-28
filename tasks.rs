@@ -77,23 +77,23 @@ fn takes_ownership(some_string: String) {
 fn main() {
     let s = String::from("hello");
     println!("{}", s); 
-    //Enter expected output A:
+    //Enter expected output A: hello
     //Enter expected output B:
 
     takes_ownership(s);
     let mut x = 5; 
     println!("{}", x); 
-    //Enter expected output A:
+    //Enter expected output A: hello\ 5
     //Enter expected output B:
 
     let y = x;
     x = 6;
     println!("{}", s); 
-    //Enter expected output A:
+    //Enter expected output A: panic
     //Enter expected output B:
 
     println!("{}", x + y); 
-    //Enter expected output A:
+    //Enter expected output A: 11
     //Enter expected output B:
 }
 
