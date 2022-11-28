@@ -18,22 +18,22 @@ fn main() {
 // describe what type of error you expect (doesn't have to be exact).
 fn main() {
     let x = String:from("hello");
-    println!("{}", x); 
-    //Enter expected output A:
+    println!("{}", x);
+    //Enter expected output A: hello
     //Enter expected output B:
 
     let mut y = String:from("test");
     println!("{}", y); 
-    //Enter expected output A:
+    //Enter expected output A: test
     //Enter expected output B:
 
     y = x;
     println!("x:{}, y:{}", x, y); 
-    //Enter expected output A:
+    //Enter expected output A: x:hello, y:hello
     //Enter expected output B:
 
     println!("y:{}", y); 
-    //Enter expected output A:
+    //Enter expected output A: y:hello
     //Enter expected output B:
 }
 
